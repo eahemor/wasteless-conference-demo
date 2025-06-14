@@ -74,7 +74,7 @@ const LoginScreen = ({ onLogin }) => {
             <Recycle className="w-10 h-10 text-white" />
           </div>
           <h1 className="text-3xl font-bold text-gray-800">WasteLess</h1>
-          <p className="text-gray-600 mt-2">Sustainable Campus Living</p>
+          <p className="text-gray-600 mt-2">Turning Trush Into Treasure</p>
         </div>
 
         <div className="flex items-center justify-center mb-4 p-3 bg-blue-50 rounded-lg">
