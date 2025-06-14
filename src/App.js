@@ -73,8 +73,8 @@ const LoginScreen = ({ onLogin }) => {
           <div className="bg-primary rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4 shadow-lg">
             <Recycle className="w-10 h-10 text-white" />
           </div>
-          <h1 className="text-3xl font-bold text-gray-800">WasteLess</h1>
-          <p className="text-gray-600 mt-2">Turning Trush Into Treasure</p>
+          <h1 className="text-3xl font-bold text-gray-800">WasteLess App</h1>
+          <p className="text-gray-600 mt-2">"Turning Trash Into Treasure"</p>
         </div>
 
         <div className="flex items-center justify-center mb-4 p-3 bg-blue-50 rounded-lg">
@@ -504,7 +504,7 @@ const Leaderboard = ({ user }) => {
   const leaderboardData = [
     { 
       id: 1, 
-      name: "Emma Chen", 
+      name: "Karen Davis", 
       country: "China", 
       points: 1250, 
       badges: 3, 
@@ -514,7 +514,7 @@ const Leaderboard = ({ user }) => {
     },
     { 
       id: 2, 
-      name: "Ahmed Hassan", 
+      name: "Peace Joy", 
       country: "Egypt", 
       points: 1180, 
       badges: 3, 
@@ -524,7 +524,7 @@ const Leaderboard = ({ user }) => {
     },
     { 
       id: 3, 
-      name: "Maria Rodriguez", 
+      name: "Oasis Central", 
       country: "Spain", 
       points: 1150, 
       badges: 2, 
@@ -879,7 +879,7 @@ const Profile = ({ user, onLogout }) => {
       </div>
 
       <div className="bg-blue-50 rounded-xl p-6">
-        <h3 className="font-semibold mb-2 text-blue-800">About WasteLess</h3>
+        <h3 className="font-semibold mb-2 text-blue-800">About WasteLess App</h3>
         <p className="text-sm text-blue-700 mb-3">
           Helping international students navigate UK waste disposal systems through gamification and education.
         </p>
