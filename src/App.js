@@ -122,7 +122,7 @@ const LoginScreen = ({ onLogin }) => {
           <p className="text-xs text-gray-600 text-center">
             <strong>Research Impact:</strong> Based on 23 international student interviews
             <br />
-            <strong>Conference:</strong> IC-ETSI 2025 - June 16th | Author: Ebenezer Ahemor
+            <strong>Conference:</strong> IC-ETSI 2025 - June 16th | Ebenezer Ahemor
           </p>
         </div>
       </div>
