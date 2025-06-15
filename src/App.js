@@ -35,27 +35,27 @@ const LoginScreen = ({ onLogin }) => {
   const demoUsers = [
     { 
       id: '1', 
-      name: 'Emma Chen', 
+      name: 'Karen Davis', 
       university: 'University of Greenwich', 
       points: 1250, 
       badges: ['🌱', '♻️', '🏆'],
-      country: 'China'
+      country: 'Italy'
     },
     { 
       id: '2', 
-      name: 'Ahmed Hassan', 
+      name: 'Peace Joy', 
       university: 'University of Greenwich', 
       points: 890, 
       badges: ['🌱', '♻️'],
-      country: 'Egypt'
+      country: 'Turkey'
     },
     { 
       id: '3', 
-      name: 'Maria Rodriguez', 
+      name: 'Oasis Central', 
       university: 'University of Greenwich', 
       points: 2100, 
       badges: ['🌱', '♻️', '🏆', '👑'],
-      country: 'Spain'
+      country: 'UK'
     },
   ];
 
