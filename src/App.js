@@ -531,7 +531,7 @@ const Leaderboard = ({ user }) => {
   avatar: "🇬🇧", // Changed to UK flag
   wasteLogged: "10.8kg",
   recyclingRate: "78%"
-}
+},
     { 
       id: 4, 
       name: "Raj Patel", 
