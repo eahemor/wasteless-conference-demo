@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import {
   GraduationCap, Globe, Recycle, Users, Home, BarChart3,
-  Trophy, User, Plus, Target, LogOut, CheckCircle, Award, TrendingUp
+  Trophy, User, Plus, Target, LogOut, CheckCircle, Award, TrendingUp, BookOpen
 } from 'lucide-react';
 
 function App() {
@@ -136,27 +136,31 @@ const Dashboard = ({ user, onLogout }) => {
   const tabs = [
     { id: 'home', label: 'Home', icon: Home },
     { id: 'log', label: 'Log', icon: Plus },
+      { id: 'learn', label: 'Learn', icon: BookOpen },
     { id: 'stats', label: 'Stats', icon: BarChart3 },
     { id: 'leaderboard', label: 'Leaders', icon: Trophy },
     { id: 'profile', label: 'Profile', icon: User },
   ];
 
   const renderContent = () => {
-    switch (activeTab) {
-      case 'home':
-        return <HomeContent user={user} />;
-      case 'log':
-        return <WasteLogger user={user} />;
-      case 'stats':
-        return <Analytics user={user} />;
-      case 'leaderboard':
-        return <Leaderboard user={user} />;
-      case 'profile':
-        return <Profile user={user} onLogout={onLogout} />;
-      default:
-        return <HomeContent user={user} />;
-    }
-  };
+  switch (activeTab) {
+    case 'home':
+      return <HomeContent user={user} />;
+    case 'log':
+      return <WasteLogger user={user} />;
+    case 'learn':
+      return <Education user={user} />;
+    case 'stats':
+      return <Analytics user={user} />;
+    case 'leaderboard':
+      return <Leaderboard user={user} />;
+    case 'profile':
+      return <Profile user={user} onLogout={onLogout} />;
+    default:
+      return <HomeContent user={user} />;
+  }
+};
+
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -891,4 +895,230 @@ const Profile = ({ user, onLogout }) => {
   );
 };
 
+// Add this Educational component to your App.js file
+
+const Education = ({ user }) => {
+  const [activeCategory, setActiveCategory] = useState('overview');
+
+  const categories = [
+    { id: 'overview', label: 'Overview', icon: '📚' },
+    { id: 'recycling', label: 'Recycling', icon: '♻️' },
+    { id: 'compost', label: 'Compost', icon: '🥬' },
+    { id: 'ewaste', label: 'E-Waste', icon: '📱' },
+    { id: 'textiles', label: 'Textiles', icon: '👕' },
+  ];
+
+  const educationalContent = {
+    overview: {
+      title: "UK Waste Disposal Guide",
+      content: [
+        {
+          icon: "🇬🇧",
+          title: "Welcome to UK Waste Management",
+          description: "The UK has specific waste disposal rules that might be different from your home country. This guide will help you navigate the system confidently!"
+        },
+        {
+          icon: "🎯",
+          title: "Why Proper Disposal Matters",
+          description: "Correct waste sorting helps the UK reach its 50% recycling target and reduces environmental impact. Every action counts!"
+        },
+        {
+          icon: "🏆",
+          title: "Earn Points While Learning",
+          description: "Use this knowledge in the app to earn points and badges. The more you learn, the more you contribute to campus sustainability!"
+        }
+      ]
+    },
+    recycling: {
+      title: "Recycling in the UK ♻️",
+      content: [
+        {
+          icon: "🗞️",
+          title: "Paper & Cardboard",
+          description: "Newspapers, magazines, cardboard boxes, office paper. Remove tape and staples. Flatten boxes to save space."
+        },
+        {
+          icon: "🥤",
+          title: "Plastic Bottles & Containers",
+          description: "Check for recycling symbols 1-7. Rinse containers clean. Keep lids on bottles. No plastic bags in recycling bins!"
+        },
+        {
+          icon: "🥫",
+          title: "Metal Cans & Foil",
+          description: "Food cans, drink cans, aluminum foil (clean). Rinse food residue. No need to remove labels completely."
+        },
+        {
+          icon: "🍾",
+          title: "Glass Bottles & Jars",
+          description: "Clear, green, and brown glass. Remove lids. Rinse clean. No broken glass or light bulbs."
+        }
+      ]
+    },
+    compost: {
+      title: "Composting & Food Waste 🥬",
+      content: [
+        {
+          icon: "🍎",
+          title: "Fruit & Vegetable Scraps",
+          description: "Apple cores, banana peels, vegetable peelings, salad leaves. All raw or cooked fruits and vegetables are fine."
+        },
+        {
+          icon: "🍞",
+          title: "Food Leftovers",
+          description: "Bread, rice, pasta, cereal. Include plate scrapings and out-of-date food. Remove packaging first."
+        },
+        {
+          icon: "☕",
+          title: "Tea Bags & Coffee Grounds",
+          description: "Used tea bags, coffee grounds, coffee filters. Great for compost and reduces landfill waste."
+        },
+        {
+          icon: "❌",
+          title: "What NOT to Compost",
+          description: "Meat, fish, dairy, oils, pet waste, diseased plants. These can attract pests or harm the composting process."
+        }
+      ]
+    },
+    ewaste: {
+      title: "Electronic Waste (E-Waste) 📱",
+      content: [
+        {
+          icon: "📱",
+          title: "Small Electronics",
+          description: "Phones, tablets, chargers, headphones, gaming devices. Many contain valuable metals that can be recovered."
+        },
+        {
+          icon: "💻",
+          title: "Computers & Laptops",
+          description: "Desktop computers, laptops, keyboards, mice. Delete personal data before disposal. University may have collection points."
+        },
+        {
+          icon: "🔋",
+          title: "Batteries",
+          description: "Phone batteries, laptop batteries, AA/AAA batteries. Never put in regular bins - they can be dangerous!"
+        },
+        {
+          icon: "🏪",
+          title: "Where to Take E-Waste",
+          description: "University collection points, local recycling centers, electronics stores. Many offer free collection services."
+        }
+      ]
+    },
+    textiles: {
+      title: "Textile & Clothing Waste 👕",
+      content: [
+        {
+          icon: "👔",
+          title: "Good Condition Clothes",
+          description: "Donate to charity shops, clothing banks, or university swap shops. Someone else can enjoy them!"
+        },
+        {
+          icon: "🧦",
+          title: "Worn Out Textiles",
+          description: "Old socks, underwear, torn clothing. Many areas have textile recycling bins for fabric recovery."
+        },
+        {
+          icon: "👟",
+          title: "Shoes & Accessories",
+          description: "Shoes, bags, belts. Many can be repaired or donated. Some brands offer take-back programs."
+        },
+        {
+          icon: "♻️",
+          title: "Textile Recycling Tips",
+          description: "Clean items before donating. Check for textile banks on campus. Consider clothing swaps with friends!"
+        }
+      ]
+    }
+  };
+
+  const currentContent = educationalContent[activeCategory];
+
+  return (
+    <div className="p-4 space-y-6">
+      {/* Header */}
+      <div className="bg-gradient-to-r from-blue-500 to-green-500 rounded-xl p-6 text-white shadow-lg">
+        <h2 className="text-2xl font-bold mb-2 flex items-center">
+          📚 Learn UK Waste Disposal
+        </h2>
+        <p className="text-blue-100">Master UK waste systems and earn points while learning!</p>
+      </div>
+
+      {/* Category Tabs */}
+      <div className="bg-white rounded-xl p-4 shadow-sm">
+        <div className="flex overflow-x-auto space-x-2 pb-2">
+          {categories.map((category) => (
+            <button
+              key={category.id}
+              onClick={() => setActiveCategory(category.id)}
+              className={`flex-shrink-0 px-4 py-2 rounded-lg text-sm font-medium transition-all ${
+                activeCategory === category.id
+                  ? 'bg-green-500 text-white shadow-md'
+                  : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+              }`}
+            >
+              <span className="mr-2">{category.icon}</span>
+              {category.label}
+            </button>
+          ))}
+        </div>
+      </div>
+
+      {/* Content Section */}
+      <div className="bg-white rounded-xl p-6 shadow-sm">
+        <h3 className="text-xl font-bold mb-4 text-gray-800">{currentContent.title}</h3>
+        
+        <div className="space-y-4">
+          {currentContent.content.map((item, index) => (
+            <div key={index} className="bg-gray-50 rounded-lg p-4 border-l-4 border-green-500">
+              <div className="flex items-start space-x-3">
+                <div className="text-2xl flex-shrink-0">{item.icon}</div>
+                <div className="flex-1">
+                  <h4 className="font-semibold text-gray-800 mb-2">{item.title}</h4>
+                  <p className="text-gray-600 text-sm leading-relaxed">{item.description}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Quick Tips */}
+      <div className="bg-gradient-to-r from-yellow-50 to-orange-50 rounded-xl p-6 border border-yellow-200">
+        <h3 className="font-semibold mb-3 text-orange-800 flex items-center">
+          💡 Pro Tips for International Students
+        </h3>
+        <div className="grid grid-cols-1 gap-3 text-sm">
+          <div className="flex items-center space-x-2">
+            <span className="text-green-600">✓</span>
+            <span className="text-orange-700">Ask your accommodation office about local recycling schedules</span>
+          </div>
+          <div className="flex items-center space-x-2">
+            <span className="text-green-600">✓</span>
+            <span className="text-orange-700">Download your local council's waste app for collection days</span>
+          </div>
+          <div className="flex items-center space-x-2">
+            <span className="text-green-600">✓</span>
+            <span className="text-orange-700">When in doubt, check with British flatmates or friends</span>
+          </div>
+          <div className="flex items-center space-x-2">
+            <span className="text-green-600">✓</span>
+            <span className="text-orange-700">Use the WasteLess app to practice and earn points!</span>
+          </div>
+        </div>
+      </div>
+
+      {/* Action Button */}
+      <div className="bg-green-500 rounded-xl p-6 text-white text-center">
+        <h3 className="font-bold mb-2">Ready to Put Your Knowledge to Practice?</h3>
+        <p className="text-green-100 text-sm mb-4">
+          Use what you've learned to log waste correctly and earn points!
+        </p>
+        <div className="text-2xl mb-2">🏆</div>
+        <p className="text-green-100 text-xs">
+          Every correct disposal helps reach our 20% improvement goal!
+        </p>
+      </div>
+    </div>
+  );
+};
 export default App;
