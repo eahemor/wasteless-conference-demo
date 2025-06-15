@@ -505,7 +505,7 @@ const Leaderboard = ({ user }) => {
     { 
       id: 1, 
       name: "Karen Davis", 
-      country: "China", 
+      country: "Italy", 
       points: 1250, 
       badges: 3, 
       avatar: "🇨🇳",
@@ -515,7 +515,7 @@ const Leaderboard = ({ user }) => {
     { 
       id: 2, 
       name: "Peace Joy", 
-      country: "Egypt", 
+      country: "Turkey", 
       points: 1180, 
       badges: 3, 
       avatar: "🇪🇬",
@@ -525,7 +525,7 @@ const Leaderboard = ({ user }) => {
     { 
       id: 3, 
       name: "Oasis Central", 
-      country: "Spain", 
+      country: "London", 
       points: 1150, 
       badges: 2, 
       avatar: "🇪🇸",
