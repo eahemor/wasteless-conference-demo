@@ -502,36 +502,36 @@ const Analytics = ({ user }) => {
 const Leaderboard = ({ user }) => {
   // Sample leaderboard data for international students
   const leaderboardData = [
-    { 
-      id: 1, 
-      name: "Karen Davis", 
-      country: "Italy", 
-      points: 1250, 
-      badges: 3, 
-      avatar: "🇨🇳",
-      wasteLogged: "12.5kg",
-      recyclingRate: "85%"
-    },
-    { 
-      id: 2, 
-      name: "Peace Joy", 
-      country: "Turkey", 
-      points: 1180, 
-      badges: 3, 
-      avatar: "🇪🇬",
-      wasteLogged: "11.2kg",
-      recyclingRate: "82%"
-    },
-    { 
-      id: 3, 
-      name: "Oasis Central", 
-      country: "London", 
-      points: 1150, 
-      badges: 2, 
-      avatar: "🇪🇸",
-      wasteLogged: "10.8kg",
-      recyclingRate: "78%"
-    },
+    {
+  id: 1, 
+  name: "Karen Davis", 
+  country: "Italy", 
+  points: 1250, 
+  badges: 3, 
+  avatar: "🇮🇹", // Changed to Italy flag
+  wasteLogged: "12.5kg",
+  recyclingRate: "85%"
+},
+{ 
+  id: 2, 
+  name: "Peace Joy", 
+  country: "Turkey", 
+  points: 1180, 
+  badges: 3, 
+  avatar: "🇹🇷", // Changed to Turkey flag
+  wasteLogged: "11.2kg",
+  recyclingRate: "82%"
+},
+{ 
+  id: 3, 
+  name: "Oasis Central", 
+  country: "UK", // Changed to UK instead of London
+  points: 1150, 
+  badges: 2, 
+  avatar: "🇬🇧", // Changed to UK flag
+  wasteLogged: "10.8kg",
+  recyclingRate: "78%"
+}
     { 
       id: 4, 
       name: "Raj Patel", 
